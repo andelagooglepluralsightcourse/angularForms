@@ -5,6 +5,34 @@
       <label for="name">Name</label>
       <input name="name" id="name" class="form-control" placeholder="Name">
     </div>
+    <div class="custom-control custom-checkbox form-check form-group">
+      <input type="checkbox" class="custom-control-input" id="emailOffers">
+      <label class="custom-control-label" for="emailOffers">Email Special Offers</label>
+    </div>
+
+    <h5>User Interface</h5>
+    <div class="form-group">
+      <div class="custom-control custom-radio">
+        <input type="radio" id="lightInterface" name="interfaceStyle" value="light" checked class="custom-control-input">
+        <label class="custom-control-label" for="lightInterface">Light</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="mediumIntefrace" name="interfaceStyle" value="medium" class="custom-control-input">
+        <label class="custom-control-label" for="mediumIntefrace">Medium</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="darkInterface" name="interfaceStyle" value="dark" class="custom-control-input">
+        <label class="custom-control-label" for="darkInterface">Dark</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="subscriptionType">Subscription Type</label>
+      <select class="form-control" id="subscriptionType">
+        <option>Monthly</option>
+        <option>Annual</option>
+        <option>Lifetime</option>
+      </select>
+    </div>
     <button class="btn btn-primary">Send</button>
   </form>
 </div>
