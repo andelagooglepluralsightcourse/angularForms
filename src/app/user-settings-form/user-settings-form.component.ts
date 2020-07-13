@@ -8,11 +8,11 @@ import { UserSettings } from '../data/user-settings';
 export class UserSettingsFormComponent implements OnInit {
 
   originalUserSettings: UserSettings = {
-    name: 'Milton',
-    emailOffers: true,
-    interfaceStyleType:'dark',
-    subscriptionType: 'Annual',
-    notes: 'here are some notes ...'
+    name: null,
+    emailOffers: null,
+    interfaceStyleType:null,
+    subscriptionType: null,
+    notes: null
 
   }
 

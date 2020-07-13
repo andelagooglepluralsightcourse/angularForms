@@ -3,7 +3,10 @@
   <form #form="ngForm">
     <div class="form-group">
       <label for="name">Name</label>
-      <input name="name" id="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" />
+      <input name="name" id="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name"  required  #nameField="ngModel" />
+      <div [hidden]="nameField.valid ||nameField.untouched" class="alert alert-danger">
+        Enter a name
+      </div>
     </div>
     <div class="custom-control custom-checkbox form-check form-group">
       <input type="checkbox" class="custom-control-input" name="emailOffers" id="emailOffers" [(ngModel)]="userSettings.emailOffers" />
