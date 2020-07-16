@@ -3,7 +3,7 @@
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-group">
       <label for="name">Name</label>
-      <input name="name" id="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name"  required  #nameField="ngModel" [class.field-error]="form.submitted && nameField.invalid" />
+      <input name="name" id="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" (blur)="onBlur"  required  #nameField="ngModel" [class.field-error]="form.submitted && nameField.invalid" />
       <div [hidden]="!form.submitted || nameField.valid" class="alert alert-danger">
         Enter a name
       </div>
@@ -31,19 +31,19 @@
     <div class="form-group">
       <label for="subscriptionType">Subscription Type</label>
       <select class="form-control" name="subscriptionType" id="subscriptionType" [(ngModel)]="userSettings.subscriptionType">
-        <option>Monthly</option>
-        <option>Annual</option>
-        <option>Lifetime</option>
+        <option *ngFor="let type of subscriptionTypes | async ">{{type}}</option>
       </select>
     </div>
     <div class="form-group">
       <label for="notes">Notes</label>
       <textarea name="notes" id="notes" [(ngModel)]="userSettings.notes" class="form-control" rows="3"></textarea>
     </div>
+    <div [hidden] ="!postError" class="alert alert-danger">
+      {{ postErrorMessage }}
+
+    </div>
+
        <button class="btn btn-primary">Send</button>
   </form>
 </div>
-
-{{ userSettings | json }}
 <br>
-{{ originalUserSettings | json }}
